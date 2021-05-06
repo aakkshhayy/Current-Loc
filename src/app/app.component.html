@@ -1,0 +1,54 @@
+<div class="container">
+    <div style="text-align:center">
+        <h1>
+            Google Map Location Tracking
+        </h1>
+    </div>
+
+    <div class="alert alert-warning">
+        Note: Once Track me is enabled, refresh page to enable Find me feature!
+    </div>
+    <div>
+        <div class="form-group">
+            <label style="background-color: rgb(34, 235, 77);"> Give your address</label>
+            <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+        </div>
+        <div>
+            <button style="background-color: rgb(122, 194, 50);" [disabled]=" isTracking " class="btn btn-primary " (click)="findMe() ">Find me</button>
+            <button style="background-color: rgb(220, 20, 193)" class=" btn btn-primary " (click)="trackMe() ">Track me</button>
+            <button (click)="setMapType( 'terrain') " class="btn btn-primary ">Terrain</button>
+            <button (click)="setMapType( 'satellite') " class="btn btn-danger ">Satellite</button>
+            <button (click)="setMapType( 'roadmap') " class="btn btn-warning ">Road Map</button>
+
+            <button type="button " (click)="toggleMap() " class="btn btn-primary ">Toggle Map</button>
+        </div>
+
+        <div class="row ">
+
+
+        </div>
+
+        <br>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="text-center ">
+                    <h3>
+                        <div #gmap style="width:100%;height:300px "></div>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <footer>
+        <div class="row ">
+            <div class="col-md-1 ">
+
+            </div>
+            <div class="col-md-2 ">
+
+            </div>
+
+        </div>
+    </footer>
+</div>
